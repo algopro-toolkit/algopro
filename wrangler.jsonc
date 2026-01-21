@@ -1,0 +1,10 @@
+{
+  // Workers 名稱
+  "name": "algopro",
+  // 兼容日期
+  "compatibility_date": "2026-01-21",
+  // 靜態資產設定
+  "assets": {
+    "directory": "./dist"
+  }
+}
