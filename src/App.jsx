@@ -15,6 +15,7 @@ import {
   Instagram,
   Receipt
 } from 'lucide-react';
+import contentImage from './assets/content.png';
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,9 +29,10 @@ const App = () => {
   const instagramUrl = "https://ig.me/m/algopro.toolkit";  // 聯繫我們、預約演示 Demo
   const instagramProfileUrl = "https://www.instagram.com/algopro.toolkit";  // 關注 IG
   
-  const logoPath = "algopro_logo1.png";
-  const mainWebImage = "web.png";
-  const instagramLogoPath = "instagram-logo.png";
+  const baseUrl = import.meta.env.BASE_URL;
+  const logoPath = `${baseUrl}algopro_logo1.png`;
+  const mainWebImage = contentImage;
+  const instagramLogoPath = `${baseUrl}instagram-logo.png`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -134,12 +136,12 @@ const App = () => {
             專為頂尖理財顧問打造的工具
           </div>
           
-          <h1 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-tight">
+          <h1 className="text-fluid-hero font-black text-white mb-8 tracking-tighter leading-tight">
             不僅是一個計算機，<br />
             更是您的<span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-600">開單神器</span>。
           </h1>
           
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-400 mb-12 font-medium">
+          <p className="max-w-2xl mx-auto text-fluid-subtitle text-slate-400 mb-12 font-medium">
             一個工具 · 一次專業演示 · MDRT路上的基本標準
           </p>
 
@@ -148,7 +150,7 @@ const App = () => {
               href={appStoreUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-12 py-5 bg-emerald-500 text-black font-black rounded-2xl transition-all shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2 group text-xl"
+              className="w-full sm:w-auto px-12 py-5 bg-emerald-500 text-black font-black rounded-2xl transition-all shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2 group text-fluid-btn"
             >
               App Store 免費下載
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -157,7 +159,7 @@ const App = () => {
               href={instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-12 py-5 bg-white/5 border border-white/10 text-white font-bold rounded-2xl transition-all backdrop-blur-sm flex items-center justify-center gap-2 text-xl"
+              className="w-full sm:w-auto px-12 py-5 bg-white/5 border border-white/10 text-white font-bold rounded-2xl transition-all backdrop-blur-sm flex items-center justify-center gap-2 text-fluid-btn"
             >
               <Instagram className="w-5 h-5 text-rose-400" />
               預約演示 Demo
@@ -201,7 +203,7 @@ const App = () => {
               ].map((advantage, idx) => (
                 <div 
                   key={idx}
-                  className="bg-white/5 rounded-2xl border border-white/10 p-8 hover:border-emerald-500/50 hover:bg-white/10 transition-all duration-300 group"
+                  className="liquid-glass rounded-2xl p-8 hover:border-emerald-500/40 transition-all duration-300 group"
                 >
                   <div className="mb-4 group-hover:scale-110 transition-transform duration-300">
                     {advantage.icon}
@@ -216,24 +218,24 @@ const App = () => {
       </section>
 
       {/* 七大功能 */}
-      <section id="features" className="py-24 bg-white/5">
+      <section id="features" className="py-24">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-6">全方位精算工具箱</h2>
-            <p className="text-slate-400 text-lg">覆蓋保險理財七大核心場景</p>
+            <h2 className="text-fluid-section font-black text-white mb-6">全方位精算工具箱</h2>
+            <p className="text-slate-400 text-fluid-subtitle">覆蓋保險理財七大核心場景</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {tools.map((tool) => (
-              <div key={tool.id} className="bg-white/5 rounded-[2rem] border border-white/10 overflow-hidden group hover:border-emerald-500/50 transition-all">
+              <div key={tool.id} className="liquid-glass rounded-[2rem] overflow-hidden group hover:border-emerald-500/40 transition-all">
                 {/* 工具截圖 1.png - 6.png */}
-                <div className="relative aspect-video overflow-hidden bg-black">
+                <div className="relative aspect-video overflow-hidden">
                   <img 
-                    src={tool.image} 
+                    src={`${baseUrl}${tool.image}`} 
                     alt={tool.title} 
                     className="w-full h-full object-cover block group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute top-6 left-6 w-12 h-12 rounded-xl bg-black/80 backdrop-blur-md flex items-center justify-center border border-white/10">
+                  <div className="absolute top-6 left-6 w-12 h-12 rounded-xl liquid-glass flex items-center justify-center">
                     {tool.icon}
                   </div>
                 </div>
@@ -253,17 +255,17 @@ const App = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-start gap-12">
             <div className="lg:w-1/2 text-left">
-              <h2 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+              <h2 className="text-fluid-section-alt font-black text-white mb-6 leading-tight">
                 一個工具，<br />
                 <span className="text-emerald-400">讓專業更有說服力</span>
               </h2>
-              <p className="text-lg md:text-xl text-slate-400 font-medium">
+              <p className="text-fluid-subtitle text-slate-400 font-medium">
                 AlgoPro 將複雜的精算邏輯轉化為優雅的視覺呈現。少步驟、快結果，助您展現不可替代的說服力。
               </p>
             </div>
             
             <div className="lg:w-1/2 w-full">
-               <div className="overflow-hidden border border-white/10 bg-black shadow-2xl">
+               <div className="overflow-hidden rounded-2xl liquid-glass shadow-2xl">
                   <img 
                     src={mainWebImage} 
                     alt="AlgoPro 專業展示" 
@@ -278,13 +280,13 @@ const App = () => {
       {/* CTA */}
       <section id="download" className="py-32 bg-emerald-500 text-center text-black">
         <div className="container mx-auto px-6">
-          <h2 className="text-5xl md:text-8xl font-black mb-12 tracking-tighter">準備好了嗎？</h2>
+          <h2 className="text-fluid-cta font-black mb-12 tracking-tighter">準備好了嗎？</h2>
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
             <a 
               href={appStoreUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex px-16 py-7 bg-black text-white font-black rounded-[2rem] hover:scale-105 transition-all shadow-2xl items-center justify-center gap-4 text-2xl"
+              className="w-full sm:w-auto inline-flex px-16 py-7 bg-black text-white font-black rounded-[2rem] hover:scale-105 transition-all shadow-2xl items-center justify-center gap-4 text-fluid-cta-btn"
             >
               <Smartphone className="w-10 h-10" />
               前往 App Store 下載
@@ -293,7 +295,7 @@ const App = () => {
               href={instagramProfileUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex px-10 py-7 bg-white/95 border-2 border-black/10 text-black font-black rounded-[2rem] hover:scale-105 transition-all shadow-xl items-center justify-center gap-3 text-xl"
+              className="w-full sm:w-auto inline-flex px-10 py-7 bg-white/95 border-2 border-black/10 text-black font-black rounded-[2rem] hover:scale-105 transition-all shadow-xl items-center justify-center gap-3 text-fluid-cta-btn"
             >
               <img src={instagramLogoPath} alt="Instagram" className="w-9 h-9" />
               關注 IG

@@ -10,3 +10,55 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* 流體字型 - 隨畫面大小自動縮放，減少換行 */
+.text-fluid-hero {
+  font-size: clamp(2rem, 5vw + 1.5rem, 6rem);
+  line-height: 1.1;
+}
+.text-fluid-cta {
+  font-size: clamp(2.25rem, 6vw + 1.5rem, 6.5rem);
+  line-height: 1.05;
+}
+.text-fluid-section {
+  font-size: clamp(1.75rem, 3.5vw + 1rem, 3.75rem);
+}
+.text-fluid-section-alt {
+  font-size: clamp(1.5rem, 3vw + 1rem, 3.5rem);
+}
+.text-fluid-subtitle {
+  font-size: clamp(0.9rem, 1.2vw + 0.6rem, 1.25rem);
+}
+.text-fluid-btn {
+  font-size: clamp(0.95rem, 1.2vw + 0.5rem, 1.5rem);
+}
+.text-fluid-cta-btn {
+  font-size: clamp(1rem, 1.5vw + 0.5rem, 1.5rem);
+}
+
+/* iOS 26 Liquid Glass / Glassmorphism - 適用於深色底 */
+@layer components {
+  .liquid-glass {
+    position: relative;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+  .liquid-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    pointer-events: none;
+  }
+}
