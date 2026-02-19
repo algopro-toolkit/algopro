@@ -15,7 +15,7 @@ import {
   Instagram,
   Receipt
 } from 'lucide-react';
-import contentImage from './assets/content.png';
+import contentImage from './assets/homeview.png';
 
 const App = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -132,17 +132,20 @@ const App = () => {
       {/* Hero 區塊 */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32">
         <div className="container mx-auto px-6 text-center">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold tracking-widest uppercase mb-8">
-            專為頂尖理財顧問打造的工具
+          <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-bold tracking-widest uppercase mb-8" style={{ fontSize: 'calc(0.75rem + 2pt)' }}>
+            專為頂尖理財顧問打造的iPad工具
           </div>
           
+          <p className="text-fluid-hero font-black text-white mb-4 tracking-tighter leading-tight">
+            準備好了嗎？
+          </p>
           <h1 className="text-fluid-hero font-black text-white mb-8 tracking-tighter leading-tight">
             不僅是一個計算機，<br />
             更是您的<span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-600">開單神器</span>。
           </h1>
           
           <p className="max-w-2xl mx-auto text-fluid-subtitle text-slate-400 mb-12 font-medium">
-            一個工具 · 一次專業演示 · MDRT路上的基本標準
+            一個工具 · 一次專業演示 · MDRT路上的基本配置
           </p>
 
           <div className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-24">
@@ -152,7 +155,7 @@ const App = () => {
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-12 py-5 bg-emerald-500 text-black font-black rounded-2xl transition-all shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2 group text-fluid-btn"
             >
-              App Store 免費下載
+              App Store免費試用
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
@@ -347,8 +350,7 @@ const App = () => {
                 </button>
                 {pricingOpen && (
                   <div className="text-white space-y-2 mt-2 pl-4 border-l-2 border-white/20">
-                    <p>7 日免費試用</p>
-                    <p>其後 HK$78 / 月</p>
+                    <p>7 日免費試用，其後 HK$78 / 月</p>
                     <p>可隨時於 App Store 取消</p>
                     <p className="mt-3">無合約｜無隱藏收費</p>
                   </div>
