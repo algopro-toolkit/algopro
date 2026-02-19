@@ -136,9 +136,6 @@ const App = () => {
             專為頂尖理財顧問打造的iPad工具
           </div>
           
-          <p className="text-fluid-hero font-black text-white mb-4 tracking-tighter leading-tight">
-            準備好了嗎？
-          </p>
           <h1 className="text-fluid-hero font-black text-white mb-8 tracking-tighter leading-tight">
             不僅是一個計算機，<br />
             更是您的<span className="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-emerald-600">開單神器</span>。
@@ -267,8 +264,8 @@ const App = () => {
               </p>
             </div>
             
-            <div className="lg:w-1/2 w-full">
-               <div className="overflow-hidden rounded-2xl liquid-glass shadow-2xl">
+            <div className="lg:w-1/2 w-full flex justify-center">
+               <div className="overflow-hidden rounded-2xl liquid-glass shadow-2xl w-[65%]">
                   <img 
                     src={mainWebImage} 
                     alt="AlgoPro 專業展示" 
