@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "clean-build": "pkill -f \"/node_modules/.bin/vite build\" || true; pkill -f \"npm run build\" || true; vite build",
     "preview": "vite preview"
   },
   "dependencies": {
